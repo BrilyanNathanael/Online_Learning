@@ -39,7 +39,7 @@ $mail->Body = '
     <div style="border: 2px solid #000000;width: 500px;text-align: center;background-color: #ffffff;padding: 1em 1em 2em 1em; margin:auto;">
         <p>Hi! kamu baru saja mendaftar <b>Online Learning</b> akun.</p>
         <p>Mohon luangkan waktu sejenak untuk memverifikasi bahwa ini adalah email Anda.</p>
-        <a href="http://localhost/Online_Learning-master/verify.php?email='.$email.'&hash='.$hash.'" style="border-radius: 5px;background-color: #0D3081;padding: .5em 1em;border: 0;color: #ffffff;margin: .8em 0;cursor: pointer;text-decoration: none;">Verify My Email Address</a>
+        <a href="http://localhost/Online_Learning/verify.php?email='.$email.'&hash='.$hash.'" style="border-radius: 5px;background-color: #0D3081;padding: .5em 1em;border: 0;color: #ffffff;margin: .8em 0;cursor: pointer;text-decoration: none;">Verify My Email Address</a>
         <p>Jika Anda tidak membuat akun menggunakan email ini, harap abaikan email ini.</p>
         <p class="regards">Hormat kami,</p>
         <p><b>Online Learning Team</b></p>

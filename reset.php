@@ -41,7 +41,7 @@ $mail->Body = '
             <p style="margin: .3em 0;">Berikut password baru Anda: <span style="color: darkgray;">'.$code.'</span></p>
             <p style="margin: .3em 0;">Harap masuk kembali dan mengubah password.</p>
             <h4 style="color: #0D3081;font-size: 20px;font-weight: bold;margin-top: 1.2em;">HARAP TIDAK MEMBAGIKAN PASSWORD!</h4>
-            <a href="http://localhost/hackathon-web/reset_password.php?email='.$email.'&code='.$code.'" style="border-radius:5px;background-color: #0D3081;padding: .5em 1em;border: 0;color: #ffffff;margin: .8em 0;cursor: pointer;text-decoration: none;">Login & Change My Password</a>
+            <a href="http://localhost/Online_Learning/reset_password.php?email='.$email.'&code='.$code.'" style="border-radius:5px;background-color: #0D3081;padding: .5em 1em;border: 0;color: #ffffff;margin: .8em 0;cursor: pointer;text-decoration: none;">Login & Change My Password</a>
             <p style="margin: .3em 0;">Hormat kami,</p>
             <p style="margin: .3em 0;"><b>Online Learning Team</b></p>
         </div>

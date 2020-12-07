@@ -75,14 +75,6 @@
         $email = $data["email"];
         $password = mysqli_real_escape_string($conn, $data["password"]);
         $repassword = mysqli_real_escape_string($conn, $data["re-password"]);
-        $gambar = upload();
-        // $hash = md5( rand(0,1000) );
-        if($gambar == 0){
-            return false;
-        }
-        else if($gambar == 1){
-            return false;
-        }
 
         $error = 0;
         
@@ -208,6 +200,15 @@
             return false;
         }
         else if($error == 0){
+            $gambar = upload();
+            // $hash = md5( rand(0,1000) );
+            
+            if($gambar == 0){
+                return false;
+            }
+            else if($gambar == 1){
+                return false;
+            }
             $password = password_hash($password, PASSWORD_DEFAULT);
 
             mysqli_query($conn, "INSERT INTO user VALUES('','$nama', '$jenis_kelamin', '$alamat', '$telepon', '$email', '$password', '$gambar')");

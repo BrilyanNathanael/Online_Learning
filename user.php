@@ -48,7 +48,7 @@
         </div>
         <div class="videos">
             <?php foreach($videos as $video) : ?>
-            <a href="">
+            <a href="materi.php?id=<?php echo $video["id"]; ?>">
                 <div class="video">
                     <img src="materi/<?php echo $video["gambar"]; ?>" alt="">
                     <div class="title">

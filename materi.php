@@ -1,3 +1,22 @@
+<?php
+    session_start();
+    require 'functions.php';
+
+    if(!isset($_SESSION["login"])){
+        header("Location: masuk.php");
+        exit;
+    }
+
+    $id = $_SESSION['id'];
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE id = '$id'");
+    $row = mysqli_fetch_assoc($result);
+
+    $prodid = $_GET['id'];
+    $data = mysqli_query($conn, "SELECT * FROM materi WHERE id = '$prodid'");
+    $prod = mysqli_fetch_assoc($data);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +33,8 @@
         </a>
         <div class="dropdown">
             <button class="dropbtn">
-                <img src="asset/profile.png" alt="" width="20" height="20" style="border-radius: 100%;">
-                <p>Halo, Budi</p>
+                <img src="profile/<?php echo $row["gambar"];?>" alt="" width="20" height="20" style="border-radius: 100%;">
+                <p>Halo, <?php echo $row["nama"];?></p>
                 <img src="asset/navbar-dropdown.png" alt="" width="10" height="10">
             </button>
             <div class="dropdown-content">
@@ -26,9 +45,9 @@
     </nav>
     
     <section>
-        <h1>Lorem ipsum dolor sit.</h1>
-        <iframe src="https://www.youtube.com/embed/pDk94cOADQI" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen></iframe>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque dolor, neque maiores in a praesentium? Officia quo et incidunt facilis molestias laboriosam quaerat, dolorum recusandae quos culpa, similique hic nihil quidem, repudiandae eveniet suscipit voluptas. Eos quo tenetur repellendus similique.</p>
+        <h1><?php echo $prod["judul"];?></h1>
+        <iframe src="https://www.youtube.com/embed/<?php echo $prod["video"];?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen></iframe>
+        <p><?php echo $prod["deskripsi"];?></p>
     </section>
 
     <footer>

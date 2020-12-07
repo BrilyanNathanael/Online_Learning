@@ -10,6 +10,12 @@
     $id = $_SESSION['id'];
     $result = mysqli_query($conn, "SELECT * FROM user WHERE id = '$id'");
     $row = mysqli_fetch_assoc($result);
+
+    if($row['active'] == '0'){
+        header("Location: verify.php");
+        exit;
+    }
+    
     if(isset($_POST["change-pict"])){
         if(editPicture($_POST) > 0){
             echo "

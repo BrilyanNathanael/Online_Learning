@@ -75,7 +75,7 @@
         $email = $data["email"];
         $password = mysqli_real_escape_string($conn, $data["password"]);
         $repassword = mysqli_real_escape_string($conn, $data["re-password"]);
-
+        $hash = md5( rand(0,1000) );
         $error = 0;
         
         if($nama == ""){
@@ -145,7 +145,7 @@
                 </script>
             ";
         }
-        else if(!preg_match("/^[^@]+@gmail.com/", $email)){
+        else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $error++;
             echo "
                 <script>
@@ -211,13 +211,13 @@
             }
             $password = password_hash($password, PASSWORD_DEFAULT);
 
-            mysqli_query($conn, "INSERT INTO user VALUES('','$nama', '$jenis_kelamin', '$alamat', '$telepon', '$email', '$password', '$gambar')");
+            mysqli_query($conn, "INSERT INTO user VALUES('','$nama', '$jenis_kelamin', '$alamat', '$telepon', '$email', '$password', '$gambar', '$hash', '0')");
             $result = mysqli_query($conn, "SELECT * FROM user WHERE email = '$email'");
             $row = mysqli_fetch_assoc($result);
             $_SESSION["login"] = true;
             $_SESSION["id"] = $row["id"];
 
-            // include('mail.php');
+            include('mailing.php');
 
             return mysqli_affected_rows($conn);
         }
@@ -319,7 +319,7 @@
                 </script>
             ";
         }
-        else if(!preg_match("/^[^@]+@gmail.com/", $email)){
+        else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $error++;
             echo "
                 <script>

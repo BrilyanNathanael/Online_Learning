@@ -38,9 +38,9 @@ $mail->Body = '
         <h1 style="font-size: 48px;color: #0D3081;margin-bottom: .8em;text-align: center;">Online Learning</h1>
         <div style="border: 2px dashed #F6F5F5;width: 500px;text-align: center;background-color: #ffffff;padding: 1em 1em 2em 1em;margin:auto;">
             <p style="margin: .3em 0 1.2em 0;">Hi <b>'.$nama.'</b>,</p>
-            <p style="margin: .3em 0;">Here is your new password: <span style="color: darkgray;">'.$code.'</span></p>
-            <p style="margin: .3em 0;">Please log in again and immediately change your password.</p>
-            <h4 style="color: #0D3081;font-size: 20px;font-weight: bold;margin-top: 1.2em;">DO NOT SHARE YOUR PASSWORD!</h4>
+            <p style="margin: .3em 0;">Berikut password baru Anda: <span style="color: darkgray;">'.$code.'</span></p>
+            <p style="margin: .3em 0;">Harap masuk kembali dan mengubah password.</p>
+            <h4 style="color: #0D3081;font-size: 20px;font-weight: bold;margin-top: 1.2em;">HARAP TIDAK MEMBAGIKAN PASSWORD!</h4>
             <a href="http://localhost/hackathon-web/reset_password.php?email='.$email.'&code='.$code.'" style="border-radius:5px;background-color: #0D3081;padding: .5em 1em;border: 0;color: #ffffff;margin: .8em 0;cursor: pointer;text-decoration: none;">Login & Change My Password</a>
             <p style="margin: .3em 0;">Hormat kami,</p>
             <p style="margin: .3em 0;"><b>Online Learning Team</b></p>
